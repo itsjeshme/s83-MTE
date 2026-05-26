@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Syne:wght@400..800&display=swap');
 
-/*
-#4B0082 bluish purple
-#702963 purple secondary
-#4F2700 tertiary brown
-#F9F9F9 neutral white*/
-
 /*================Main================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #F9F9F9;
+    color: #4F2700;
+    line-height: 1.6;
+    padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,23 +44,6 @@ h1, h2, h3, h4, h5, h6 {
     --color-placeholder: rgba(112, 41, 99, 0.1); faint plum sa boxes
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--font-body);
-    background-color: var(--color-bg);
-    color: var(--color-brown);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    padding: 0 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
 a {
     text-decoration: none;
     color: var(--color-brown);
@@ -79,7 +67,6 @@ a:hover {
     position: relative;
 }
 
-/* Adds the crossed lines to mimic your wireframe */
 .img-placeholder::before,
 .img-placeholder::after {
     content: '';
@@ -93,16 +80,39 @@ a:hover {
 .img-placeholder::before { transform: rotate(45deg); }
 .img-placeholder::after { transform: rotate(-45deg); }
 
+/*===============Navbar===============*/
+
+#navbar {
+    display: flex;
+    width: 100%;
+}
+
+#navbar h1 {
+  color: #4B0082;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+#navbar p {
+  margin: 0;
+  font-size: 15px;
+  color: grey;
+}
+
+a.black {
+  color: black;
+}
 
 /*================Hero================*/
 
 .image-container {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .image-container img {
-  width: 80vw;
+  width: 85vw;
 }
 
 .hero-section {
@@ -111,7 +121,6 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--color-border);
     margin-bottom: 2rem;
 }
 
@@ -166,10 +175,15 @@ div.footer-col.copyright {
     gap: 0.5rem;
 }
 
+.footer-col img {
+    max-height:30px;
+}
+
 .footer-col.copyright {
-    align-items: flex-end;
-    font-size: 0.9rem;
+    align-items: flex-center;
+    font-size: 0.8rem;
     color: var(--color-brown);
+    text-align: center !important;
 }
 
 /*================Header================*/
@@ -196,54 +210,6 @@ div.footer-col.copyright {
 
 /*================Carousel================*/
 
-.carousel-section {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.carousel-item {
-    width: 250px;
-    height: 200px;
-}
-
-.carousel-arrow {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--color-brown);
-    cursor: pointer;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: var(--color-border);
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dot.active {
-    background-color: var(--color-indigo);
-}
 
 /*================Products================*/
 
@@ -272,10 +238,16 @@ div.footer-col.copyright {
 }
 
 .product-img {
-    height: 220px;
+    max-height: 300px;
     border: none;
     border-bottom: 1px solid var(--color-border);
     overflow: hidden;
+    text-align: center;
+}
+
+.product-img img {
+    max-height: 90%;
+    
 }
 
 .product-info {
